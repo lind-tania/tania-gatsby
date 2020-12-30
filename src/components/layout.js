@@ -19,14 +19,10 @@ const Content = styled.div`
   padding: 0 1.0875rem 1rem;
   padding-top: 0;
 `
-
-const GatsbyLink = styled.a`
-  margin-left: 5px;
-`
-
 const Footer = styled.footer`
   display: flex;
   justify-content: center;
+  font-size: 14px;
 `
 
 const Layout = ({ children }) => (
@@ -47,10 +43,9 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <Footer>
             <p>
-            © {new Date().getFullYear()}, Built with
+              {/* tania.o.lind@gmail.com */}
             {` `}
             </p>
-            <GatsbyLink href="https://www.gatsbyjs.org">Gatsby</GatsbyLink>
           </Footer>
         </Content>
       </>

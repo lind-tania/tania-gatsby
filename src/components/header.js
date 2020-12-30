@@ -35,7 +35,7 @@ const NavLink = styled(Link)`
   }
 `
 
-const GitHubLink = styled.a`
+const LinkedInLink = styled.a`
   color: black;
   margin-left: 15px;
   text-decoration: none;
@@ -76,11 +76,11 @@ const Header = ({ siteTitle }) => (
   <SiteHeader>
     <Content>
       <p>
-        <HomeLink to="/">{siteTitle}</HomeLink>
-        <NavLink to="/blog">Blog</NavLink>
-        <GitHubLink href="https://github.com/niklasmtj/gatsby-starter-julia">
-          GitHub
-        </GitHubLink>
+        <HomeLink to="/">Home</HomeLink>
+        <NavLink to="/blog">Media</NavLink>
+        <LinkedInLink href="https://www.linkedin.com/in/lind-tania/">
+          LinkedIn
+        </LinkedInLink>
       </p>
     </Content>
   </SiteHeader>

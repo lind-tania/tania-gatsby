@@ -2,9 +2,8 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+
 
 const Content = styled.div`
   margin: 0 auto;
@@ -15,6 +14,10 @@ const Content = styled.div`
 const ArticleDate = styled.h5`
   display: inline;
   color: #606060;
+`
+const ArticleLink = styled.a`
+text-decoration: none;
+margin-bottom: 1.45rem;   
 `
 
 const MarkerHeader = styled.h3`
@@ -28,41 +31,29 @@ const MarkerHeader = styled.h3`
   );
 `
 
-const ReadingTime = styled.h5`
-  display: inline;
-  color: #606060;
-`
-
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Blog" />
       <Content>
-        <h1>Blog</h1>
-        {data.allMarkdownRemark.edges
-          .filter(({ node }) => {
-            const rawDate = node.frontmatter.rawDate
-            const date = new Date(rawDate)
-            return date < new Date()
-          })
-          .map(({ node }) => (
-            <div key={node.id}>
-              <Link
-                to={node.frontmatter.path}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
-                <MarkerHeader>{node.frontmatter.title}</MarkerHeader>
-              </Link>
+        <h3>A list of recent talks I have given</h3>
+                {/* <MarkerHeader>header</MarkerHeader> */}
               <div>
-                <ArticleDate>{node.frontmatter.date}</ArticleDate>
-                <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
+                <ArticleDate>2020</ArticleDate>
               </div>
-              <p>{node.excerpt}</p>
-            </div>
-          ))}
+        <p> "What, Why, and How of React Fiber" | ​SingleSprout Speaker Series</p>
+        <div>
+          <ArticleDate>2020</ArticleDate>
+        </div>
+        <p> "Frontend Frameworks Alternatives - Vue.js" | ​SingleSprout Speaker Series</p>
+        <h3>A selection of recent writing</h3>
+        <div>
+          <ArticleDate>2020</ArticleDate>
+        </div>
+        <ArticleLink href='https://medium.com/better-programming/improving-and-optimizing-performance-of-react-apps-with-reactime-v7-0-737bdbdf1e0e'><p>Improve and Optimize Performance of React Apps With Reactime V7.0</p></ArticleLink>
+        <div>
+          <ArticleDate>2020</ArticleDate>
+        </div>
+        <ArticleLink href='https://medium.com/better-programming/working-on-an-open-source-as-a-team-50b61b85bb55'>Working on an Open Source Project as a Team</ArticleLink>
       </Content>
     </Layout>
   )
